@@ -14,7 +14,10 @@
 			function onDeviceReady(){
 				}
 			</script> 
-			<script>var ref30 = cordova.InAppBrowser.open('https://www.goodreads.com/book/show/6186357-the-maze-runner', '_blank', 'location=yes');</script>
-			
+			<script>var ref = cordova.InAppBrowser.open('http://apache.org', '_blank', 'location=yes');
+ref.addEventListener('loadstop', function() {
+    ref.executeScript({file: "myscript.js"});
+});
+			</script>
     </body>
 </html>
